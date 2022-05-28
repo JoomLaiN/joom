@@ -1,0 +1,1 @@
+SELECT employees.first_name, employees.last_name, titles.title, employees.hire_date, employees.birth_date from titles, employees WHERE (titles.emp_no=employees.emp_no) and (titles.title='senior staff') and (employees.hire_date<'1990-01-01') and employees.birth_date = (SELECT max(employees.birth_date) FROM employees);
